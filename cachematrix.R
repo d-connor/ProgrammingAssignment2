@@ -29,7 +29,7 @@ cacheSolve <- function(x, ...) {
     return(i)  ## Displays i (matrix)
   }
   data <- x$get() ## If the matrix isn’t present, it gets it, and prepares it to be inverted
-  i<- solve(data, ...)
+  i<- solve(data, ...) #inverts matrix
   x$setinv(i)  ## sets the inverse of the matrix
   i
   
