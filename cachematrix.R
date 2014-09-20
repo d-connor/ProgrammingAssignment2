@@ -6,7 +6,7 @@
 makeCacheMatrix <- function(x = matrix()) {  ## The function below assess a matrix, needs to be a square matrix (1:4, 2)
 
   
-  i <- NULL  ## You want to set i to null, so the parent environment doesn’t overweight this with a value you don’t want
+  i <- NULL  ## You want to set i and x to null, so the parent environment doesn’t overweight this with a value you don’t want 
   set <- function(y) {  ## Sets the value of the matrix
     x <<- y
     i <<- NULL
@@ -25,8 +25,8 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   i<- x$getinv()  ##get the inverse previs matrix
   if(!is.null(i)) {  ## this double checks if the matrix is in the environment, specifically the 'opposite' of i being Null (aka present)
-    message("Getting Cached Data, Lazy!!")
-    return(i)
+    message("Getting Cached Data, Lazy!!")  ## Communicates to the user that the data is being retrieved
+    return(i)  ## Displays i (matrix)
   }
   data <- x$get() ## If the matrix isn’t present, it gets the inverse of it for you
   i<- solve(data, ...)
