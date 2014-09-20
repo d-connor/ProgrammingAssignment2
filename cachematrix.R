@@ -12,8 +12,8 @@ makeCacheMatrix <- function(x = matrix()) {  ## The function below assess a matr
     i <<- NULL
   }
   get <- function() x  ## Calls upon the value of the matrix
-  setinv <- function(solve) i <<- solve  ## Takes value of matrix, inverts it
-  getinv <- function() i
+  setinv <- function(solve) i <<- solve  ## Takes value of matrix, inverts it, sets it in the environment
+  getinv <- function() i  ## gets the inversed matrix
   list(set = set, get = get, setinv = setinv, getinv = getinv)  ## Calls upon the value of the inverse matrix
   
 }
