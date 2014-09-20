@@ -3,7 +3,7 @@
 
 ## Beginning with the first part of the assignment:
 
-makeCacheMatrix <- function(x = matrix()) {  ## The function below assess a matrix, needs to be a square matrix (1:4, 2)
+makeCacheMatrix <- function(x = matrix()) {  ## The function below assess a matrix, needs to be a square matrix (1:4, 2).
 
   
   i <- NULL  ## You want to set i and x to null, so the parent environment doesn’t overweight this with a value you don’t want 
@@ -28,7 +28,7 @@ cacheSolve <- function(x, ...) {
     message("Getting Cached Data, Lazy!!")  ## Communicates to the user that the data is being retrieved
     return(i)  ## Displays i (matrix)
   }
-  data <- x$get() ## If the matrix isn’t present, it gets the inverse of it for you
+  data <- x$get() ## If the matrix isn’t present, it gets it, and prepares it to be inverted
   i<- solve(data, ...)
   x$setinv(i)  ## sets the inverse of the matrix
   i
